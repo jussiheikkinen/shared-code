@@ -5,8 +5,7 @@ exports.printMsg = function() {
 }
 
 exports.myAwesomeCalc = function (param1, param2) {
-  console.log(param1, param2)
-  return (param1 + param2) * 666
+  return (Number(param1) + Number(param2)) * 666
 }
 
 exports.pi = function (decimals) {

@@ -3,18 +3,27 @@ import React, { useEffect, useState } from 'react'
 const { myAwesomeCalc, pi } = require('calculations-module')
 
 function App() {
-  const [aws, setAws] = useState(null)
-  const [anotherPi, setPi] = useState(null)
+  const [nodeCalc, setNodeCalc] = useState(null)
+  const [phpCalc, setPhpCalc] = useState(null)
+  const [nodePi, setNodePi] = useState(null)  
+  const [phpPi, setPhpPi] = useState(null)  
 
   useEffect(() => {
     fetch('http://localhost:4001/pi/12')
     .then(response => response.json())
-    .then(data => setPi(data))
+    .then(data => setNodePi(data))
 
     fetch('http://localhost:4001/calc/1/2')
     .then(response => response.json())
-    .then(data => setAws(data))
+    .then(data => setNodeCalc(data))
 
+    fetch('http://localhost:8000/pi/12')
+    .then(response => response.json())
+    .then(data => setPhpPi(data))
+
+    fetch('http://localhost:8000/calc/1/2')
+    .then(response => response.json())
+    .then(data => setPhpCalc(data))
   }, [])
 
   return (
@@ -30,12 +39,21 @@ function App() {
           </div>
         </div>
         <div>
-          <h2>Calculated in back end</h2>
+          <h2>Calculated in node</h2>
           <div>
             <h5>MyAwesomeCalc</h5>
-            {JSON.stringify(aws)}
+            {JSON.stringify(nodeCalc)}
             <h5>pi</h5>
-            {JSON.stringify(anotherPi)}
+            {JSON.stringify(nodePi)}
+          </div>
+        </div>
+        <div>
+          <h2>Calculated in php</h2>
+          <div>
+            <h5>MyAwesomeCalc</h5>
+            {JSON.stringify(phpCalc)}
+            <h5>pi</h5>
+            {JSON.stringify(phpPi)}
           </div>
         </div>
       </header>
