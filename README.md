@@ -18,6 +18,8 @@
   * php api localhost:8000
 
 ### Structure
+
+```text
 .
 ├── lerna.json
 ├── package.json
@@ -43,3 +45,4 @@
 │       ├── src
 │       └── yarn.lock
 └── README.md
+```
