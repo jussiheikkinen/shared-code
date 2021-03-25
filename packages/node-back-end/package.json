@@ -1,5 +1,5 @@
 {
-  "name": "back-end",
+  "name": "@shared-code/back-end",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "calculations-module": "../calculations-module",
+    "@shared-code/calculations-module": "^1.0.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "nodemon": "^2.0.7"

@@ -1,5 +1,5 @@
 const express = require('express')
-const { myAwesomeCalc, pi } = require('calculations-module')
+const { myAwesomeCalc, pi } = require('@shared-code/calculations-module')
 const cors = require('cors')
 
 const app = express()
@@ -8,8 +8,8 @@ const port = 4001
 app.use(cors())
 
 /**
- yarn add ../calculations-module 
- yarn remove calculations-module
+ yarn add ../@shared-code/calculations-module 
+ yarn remove @shared-code/calculations-module
  */
 
 app.get('/pi/:decimals', (req, res) => {

@@ -1,6 +1,6 @@
 import './App.css'
 import React, { useEffect, useState } from 'react'
-const { myAwesomeCalc, pi } = require('calculations-module')
+const { myAwesomeCalc, pi } = require('@shared-code/calculations-module')
 
 function App() {
   const [nodeCalc, setNodeCalc] = useState(null)
